@@ -1,6 +1,11 @@
 #include "modelimage.h"
 #include "afreader.h"
+#include "opencv2/opencv.hpp"
+#include "opencv2/highgui.hpp"
+
 using std::cerr;
+
+//using cv;
 
 namespace StatModel {
 
@@ -77,7 +82,7 @@ void ModelImage::initPointsByVector(const std::vector< cv::Point2i >& V)
 bool ModelImage::loadTrainImage()
 {
     if (!imgLoaded){
-        Mat img = imread(this->hostImageName);
+        Mat img = cv::imread(this->hostImageName);
         if (img.empty()) {
             cerr << "(EE) Loading image " + this->hostImageName + " failed!" << endl;
             throw;

@@ -1,6 +1,12 @@
 #include "asmmodel.h"
 #include <cstdio>
+#include "opencv/cv.h"
+#include "opencv/highgui.h"
+#include "opencv2/imgproc.hpp"
 
+
+
+using namespace cv;
 namespace StatModel {
 
 void ASMModel::buildModel(const string& shapeDefFile, const string& ptsListFile)
@@ -162,8 +168,8 @@ vector< ASMFitResult > ASMModel::fitAll(
     vector< ASMFitResult > fitResultV;
     for (uint i=0; i<detectedObjs.size(); i++){
         cv::Rect r = detectedObjs[i];
-        r.y -= r.height*searchYOffset;
-        r.x -= r.width*searchXOffset;
+        r.y -= (int) (r.height*searchYOffset);
+		r.x -= (int) (r.width*searchXOffset);
         if (r.x<0) r.x = 0;
         if (r.y<0) r.y = 0;
         r.width *= searchWScale;
@@ -199,7 +205,7 @@ void ASMModel::showResult(Mat& img, const vector< ASMFitResult >& res)
     }
 
     if (!img.empty())
-        imshow("hoho", mb);
+        cv::imshow("hoho", mb);
 }
 
 ASMFitResult ASMModel::fit(const cv::Mat& img, int verbose)

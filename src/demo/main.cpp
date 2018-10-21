@@ -1,6 +1,11 @@
 // vim: ci:ts=4:sw=4:et
 #include "asmmodel.h"
 #include "modelfile.h"
+#include "opencv2/highgui.hpp"
+#include "opencv2/objdetect.hpp"
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/videoio.hpp"
+
 #ifdef __GNUG__
 #include <unistd.h>
 #else
@@ -9,13 +14,14 @@
 
 #include <cstdio>
 #include <string>
-#include "highgui.h"
+
 using std::string;
 //using cv::imshow;
 using std::cerr;
 using std::endl;
 
 using namespace StatModel;
+using namespace cv;
 
 //! Build an ASM model.
 void buildASMModel(ASMModel & asmModel,
@@ -34,7 +40,8 @@ void readASMModel(ASMModel & asmModel, string modelPath)
 //! Run OpenCV object detection and do ASM fitting on each detected object.
 void searchAndFit(
         ASMModel & asmModel,
-        cv::CascadeClassifier &objCascadeClassfifier,
+        //cv::CascadeClassifier &objCascadeClassfifier,
+		CascadeClassifier &objCascadeClassfifier,
         const string & picPath,
         int verboseL) {
     // Load image.

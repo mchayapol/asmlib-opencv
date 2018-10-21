@@ -4,9 +4,12 @@ PROJECT( asmlib-opencv )
 #set (CMAKE_MODULE_PATH ".;${CMAKE_MODULE_PATH}")
 set (CMAKE_PREFIX_PATH "f:/dev/opencv/build;${CMAKE_PREFIX_PATH}")
 # set (CMAKE_MODULE_PATH "f:/dev/opencv/build;${CMAKE_MODULE_PATH}")
+set (env{OpenCV_Root_DIR} "f:/dev/opencv/build")
 set (CMAKE_INSTALL_PREFIX "../build")
-set (OPENCV_INCLUDE_DIR "f:/dev/opencv/sources/include;f:/dev/opencv/sources/include;F:/dev/opencv/sources/modules/core/include;F:/dev/opencv/build;F:/dev/opencv/sources/modules/imgproc/include;F:/dev/opencv/sources/modules/photo/include;F:/dev/opencv/sources/modules/video/include;F:/dev/opencv/sources/modules/highgui/include;;F:/dev/opencv/sources/modules/imgcodecs/include;F:/dev/opencv/sources/modules/objdetect/include;F:/dev/opencv/sources/modules/videoio/include")
+# set (OPENCV_INCLUDE_DIR "f:/dev/opencv/sources/include;f:/dev/opencv/sources/include;F:/dev/opencv/sources/modules/core/include;F:/dev/opencv/build;F:/dev/opencv/sources/modules/imgproc/include;F:/dev/opencv/sources/modules/photo/include;F:/dev/opencv/sources/modules/video/include;F:/dev/opencv/sources/modules/highgui/include;;F:/dev/opencv/sources/modules/imgcodecs/include;F:/dev/opencv/sources/modules/objdetect/include;F:/dev/opencv/sources/modules/videoio/include;F:/dev/opencv/sources/modules/features2d/include;F:/dev/opencv/sources/modules/calib3d/include;F:/dev/opencv/sources/modules/flann/include;F:/dev/opencv/sources/modules/dnn/include;F:/dev/opencv/sources/modules/ml/include;F:/dev/opencv/sources/modules/shape/include;F:/dev/opencv/sources/modules/stitching/include;F:/dev/opencv/sources/modules/superres/include;F:/dev/opencv/sources/modules/videostab/include")
+set (OPENCV_INCLUDE_DIR "f:/dev/opencv/build/include")
 
+set (OpenCV_Root_DIR "f:/dev/opencv/build")
 FIND_PACKAGE( OpenCV REQUIRED )
 SET(LIB_SRC_LIST modelfile.cpp asmmodel.cpp shapevec.cpp similaritytrans.cpp afreader.cpp modelimage.cpp  shapemodel.cpp shapeinfo.cpp)
 
