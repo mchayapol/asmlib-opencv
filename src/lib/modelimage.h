@@ -2,8 +2,8 @@
 #define MODELIMAGE_H
 #include <string>
 #include <vector>
-#include "cv.h"
-#include "highgui.h"
+#include "opencv/cv.h"
+#include "opencv/highgui.h"
 #include "shapevec.h"
 #include "shapeinfo.h"
 using std::string;
@@ -11,7 +11,7 @@ using std::vector;
 using cv::Point_;
 using cv::Mat_;
 using cv::Mat;
-using cv::imread;
+//using cv::imread;
 using cv::Size;
 
 namespace StatModel {

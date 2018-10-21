@@ -11,7 +11,7 @@
 #include <string>
 #include "highgui.h"
 using std::string;
-using cv::imshow;
+//using cv::imshow;
 using std::cerr;
 using std::endl;
 

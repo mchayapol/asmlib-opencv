@@ -3,14 +3,14 @@
 
 #include "similaritytrans.h"
 
-#include "cv.h"
-#include "highgui.h"
+#include "opencv/cv.h"
+#include "opencv/highgui.h"
 #include <vector>
 using std::vector;
 using cv::Point_;
 using cv::Mat_;
 using cv::Mat;
-using cv::imread;
+//using cv::imread;
 using cv::mean;
 typedef unsigned int uint;
 
